@@ -369,7 +369,7 @@ export class Play extends Phaser.Scene {
     }
 
     gameOver() {
-        this.scene.restart();
+        this.scene.start("MainMenu");
     }
 
 }

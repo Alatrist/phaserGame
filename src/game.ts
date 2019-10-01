@@ -1,20 +1,25 @@
 import "phaser";
 import { Boot } from "./scenes/Boot";
 import {Play} from "./scenes/Play"
+import { MainMenu } from "./scenes/MainMenu";
 
 const config = {
   type: Phaser.AUTO,
-  width: window.innerWidth,
-  height: window.innerHeight,
+  width: 768,
+  height: 1024,
+  scale:{
+  mode: Phaser.Scale.FIT,
+  autoCenter: Phaser.Scale.CENTER_BOTH
+  },
   backgroundColor: 0x000000,
   physics: {
       default: 'arcade',
       arcade: {
-          debug: true,
+          //debug: true,
           gravity: { y: 0 }
       }
   },
-  scene: [Boot, Play],        
+  scene: [Boot, MainMenu, Play],        
 };
 
 export class Game extends Phaser.Game {

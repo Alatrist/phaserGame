@@ -61,11 +61,13 @@
         this.load.image("num3", "ui/numeral3.png");
         this.load.image("num4", "ui/numeral4.png");
         this.load.image("num5", "ui/numeral5.png");
+
+        this.load.image("buttonBlue", "ui/buttonBlue.png");
       }
 
       create() {
         console.log("Boot.create()");
-        this.scene.start("Play");
+        this.scene.start("MainMenu");
       }
 
   } 

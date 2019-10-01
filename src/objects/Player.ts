@@ -105,7 +105,22 @@ export class Player extends Phaser.Physics.Arcade.Sprite
         this.setLifeUI();
         if (this.lifes<1)
         {
-            this.scene.time.delayedCall(500, (this.scene as Play).gameOver, [], this.scene);
+            var gameWidth = Number(this.scene.game.config.width);
+            var gameHeight = Number(this.scene.game.config.height);
+            var text =this.scene.add.text( gameWidth/2, 
+                gameHeight/2,
+                "GAME OVER", 
+                {
+                    fontSize: gameWidth/8,
+                   // fontSize:'100px', 
+                    fontFamily: "Arial", 
+                    color: "#ff3333",
+                    align: 'center',
+                    lineSpacing: 50   
+                })
+            text.setPosition(gameWidth/2 - text.width/2, gameHeight/2 - text.height/2)
+
+            this.scene.time.delayedCall(5000, (this.scene as Play).gameOver, [], this.scene);
             this.setActive(false).setVisible(false);  
         }
     }
