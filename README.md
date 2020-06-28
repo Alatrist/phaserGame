@@ -1,4 +1,5 @@
 # Space shooter ultimate
+Semestral project for Game Development Middleware lecture at MFF CUNI
 
 * [Dependencies](https://github.com/Alatrist/phaserGame/blob/master/package.json)
 

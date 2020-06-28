@@ -153,13 +153,9 @@ export class DestructivePowerUp extends PowerUp
     {
         this.hide(); 
         let list = player.getActivatedGuns()        
-     //   if (list.length>1)
-      //  {
-            let index = Phaser.Math.Between(0, list.length-1);
-            list[index].deactivate();
-            return;
-        //}
-        
+        let index = Phaser.Math.Between(0, list.length-1);
+        list[index].deactivate();
+        return;        
     }
 }
 

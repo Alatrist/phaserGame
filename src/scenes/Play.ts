@@ -144,34 +144,36 @@ export class Play extends Phaser.Scene {
 
       this.player =new Player(this);
       
-        // LASERS kill ENEMIES
-        this.physics.add.collider(this.lasers, this.enemies, this.collideLaserEnemy, null, this); // last parameter is the context passed into the callback
-        this.physics.add.collider(this.lasers, this.enemies, this.collideLaserEnemy, null, this); // last parameter is the context passed into the callback
-        this.physics.add.collider(this.enemyLasers, this.player, this.collideLaserPlayer, null, this);
-        this.physics.add.collider(this.enemyLasers, this.lasers, this.collideLaserLaser, null, this);
+      // LASERS kill ENEMIES
+      this.physics.add.collider(this.lasers, this.enemies, this.collideLaserEnemy, null, this); // last parameter is the context passed into the callback
+      this.physics.add.collider(this.lasers, this.enemies, this.collideLaserEnemy, null, this); // last parameter is the context passed into the callback
+      this.physics.add.collider(this.enemyLasers, this.player, this.collideLaserPlayer, null, this);
+      this.physics.add.collider(this.enemyLasers, this.lasers, this.collideLaserLaser, null, this);
 
 
-        // PLAYER is killed by ENEMIES
-        this.physics.add.collider(this.player, this.enemies, this.collidePlayerEnemy, null, this); // last parameter is the context passed into the callback
+      // PLAYER is killed by ENEMIES
+      this.physics.add.collider(this.player, this.enemies, this.collidePlayerEnemy, null, this); // last parameter is the context passed into the callback
 
 
-        //ASTEROID colliders
-        this.physics.add.collider(this.player, this.asteroids, this.collidePlayerAsteroid, null, this);
-        this.physics.add.collider(this.asteroids, this.asteroids, this.collideAsteroidAsteroid, null, this);
-        this.physics.add.collider(this.lasers, this.asteroids, this.collideLaserAsteroid, null, this);
-        this.physics.add.collider(this.asteroids, this.enemies, this.collideAsteroidEnemy, null, this);
+      //ASTEROID colliders
+      this.physics.add.collider(this.player, this.asteroids, this.collidePlayerAsteroid, null, this);
+      this.physics.add.collider(this.asteroids, this.asteroids, this.collideAsteroidAsteroid, null, this);
+      this.physics.add.collider(this.lasers, this.asteroids, this.collideLaserAsteroid, null, this);
+      this.physics.add.collider(this.asteroids, this.enemies, this.collideAsteroidEnemy, null, this);
         
-        //PowerUps
-        this.physics.add.collider(this.powerUps,this.player, this.pickPowerUp, null, this);
+      //PowerUps
+      this.physics.add.collider(this.powerUps,this.player, this.pickPowerUp, null, this);
 
 
-        // UI
-        this.scoreText = this.add.text(5, 5, "Score: 0", { fontFamily: "Arial Black", fontSize: 12, color: "#33ff33", align: 'left' }).setStroke('#333333', 1);
-        this.add.image(25,35,"smallShip");
-        this.add.image(55,35, "x");
+      // UI
+      this.scoreText = this.add.text(5, 5, "Score: 0", { fontFamily: "Arial Black", fontSize: 12, color: "#33ff33", align: 'left' }).setStroke('#333333', 1);
+      this.add.image(25,35,"smallShip");
+      this.add.image(55,35, "x");
       this.explosion = this.add.particles('explosion');
       this.asteroid_explosion = this.add.particles('explosion');
-
+       
+      
+      //particles
       this.explosion.createEmitter({
         frame: {frames: [ 'smoke-puff', 'smoke0', 'smoke-puff' ],cycle: false},
         angle: { min: 0, max: 360 },
