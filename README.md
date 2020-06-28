@@ -1,6 +1,6 @@
 # Space shooter ultimate
-Semestral project for Game Development Middleware lecture at MFF CUNI
-Demo: https://youtu.be/TYoPSgApLdA
+* Semestral project for Game Development Middleware lecture at MFF CUNI
+* Demo: https://youtu.be/TYoPSgApLdA
 
 * [Dependencies](https://github.com/Alatrist/phaserGame/blob/master/package.json)
 
